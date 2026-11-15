@@ -1,0 +1,129 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Cantinho Certo — Seu guia para a primeira mudança",
+  description = "Guia prático e acolhedor para quem está fazendo a primeira mudança para um apartamento pequeno. Um passo de cada vez."
+} = Astro.props;
+const canonicalPath = Astro.url.pathname.replace(/\/index\.html$/, '/');
+const canonicalUrl = new URL(canonicalPath, Astro.site).toString();
+const socialImageUrl = new URL('/og-image.png', Astro.site).toString();
+
+import '../styles/variables.css';
+import '../styles/base.css';
+import '../styles/components.css';
+import '../styles/floorplan.css';
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta name="theme-color" content="#F8F6F0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1F1D1A" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href={canonicalUrl}>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Cantinho Certo">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonicalUrl}>
+  <meta property="og:image" content={socialImageUrl}>
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Cantinho Certo — um guia tranquilo para sua primeira mudança">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={socialImageUrl}>
+  <meta name="twitter:image:alt" content="Cantinho Certo — um guia tranquilo para sua primeira mudança">
+
+  <!-- Google Fonts (Nunito) com swap para melhor performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+
+  <noscript>
+    <div class="noscript-banner">
+      O JavaScript está desativado no seu navegador. Todo o conteúdo do guia está disponível abaixo de forma sequencial.
+    </div>
+  </noscript>
+
+  <!-- Live region para anúncios de tecnologias assistivas (WCAG A3) -->
+  <div aria-live="polite" aria-atomic="true" class="sr-only" id="announcer"></div>
+
+  <!-- ===== HEADER & NAVEGAÇÃO LINHA DO TEMPO (WCAG A4, A8) ===== -->
+  <header>
+    <div class="header-inner">
+      <a href="#inicio" class="logo" aria-label="Cantinho Certo — Página Inicial">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <path d="m3.5 13 10.5-8.5L24.5 13v9a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 22v-9Z" stroke="var(--text)" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M10 23.5v-8h8v8" stroke="var(--sage-dark)" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M20 8.5V6h2.5v4.5" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Cantinho<span class="logo-accent"> Certo</span></span>
+      </a>
+
+      <nav aria-label="Etapas da mudança">
+        <ul class="nav-timeline" role="list">
+          <li><a href="#planejar" class="nav-link" data-nav="planejar"><span class="nav-step-num">1</span> Planejar</a></li>
+          <li><a href="#escolher" class="nav-link" data-nav="escolher"><span class="nav-step-num">2</span> Escolher</a></li>
+          <li><a href="#mudar" class="nav-link" data-nav="mudar"><span class="nav-step-num">3</span> Mudar</a></li>
+          <li><a href="#mobiliar" class="nav-link" data-nav="mobiliar"><span class="nav-step-num">4</span> Mobiliar</a></li>
+          <li class="nav-sep" role="separator" aria-hidden="true"></li>
+          <li><a href="#diario" class="nav-link" data-nav="diario">Diário</a></li>
+          <li><a href="#ferramentas" class="nav-link" data-nav="ferramentas">Ferramentas</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-right">
+        <button class="theme-toggle js-only" aria-label="Alternar entre tema claro e escuro" type="button">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== INDICADOR DE PROGRESSO ===== -->
+  <div class="guide-progress js-only" id="guide-progress" role="region" aria-label="Progresso da mudança" aria-hidden="true">
+    <progress class="guide-progress-bar" id="guide-progress-bar" max="100" value="0" aria-label="Progresso geral da mudança" aria-valuetext="0% concluído"></progress>
+    <p id="progress-message">0 de 4 etapas concluídas. Um passo de cada vez.</p>
+  </div>
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main id="main-content">
+    <slot />
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer>
+    <div class="container">
+      <p>Feito com carinho por <strong>Cantinho Certo</strong> · Um passo de cada vez no seu novo lar.</p>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS MODULARES (Carregados com defer) ===== -->
+  <script is:inline src="/js/storage.js" defer></script>
+  <script is:inline src="/js/theme.js" defer></script>
+  <script is:inline src="/js/progress.js" defer></script>
+  <script is:inline src="/js/checklist.js" defer></script>
+  <script is:inline src="/js/floorplan.js" defer></script>
+  <script is:inline src="/js/newsletter.js" defer></script>
+  <script is:inline src="/js/navigation.js" defer></script>
+  <script is:inline src="/js/app.js" defer></script>
+
+</body>
+</html>

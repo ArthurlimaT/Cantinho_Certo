@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Cantinho Certo — Folha de Estilos Principal
+   Arquitetura modular:
+   - variables.css  : Variáveis, paleta (claro/escuro), tipografia, espaçamentos
+   - base.css       : Reset, acessibilidade (foco A1, skip-link A4), layout
+   - components.css : Header, timeline, cards, botões, checklists, diário
+   - floorplan.css  : Planta baixa interativa SVG e painel
+   ========================================================================== */
+
+@import url('variables.css');
+@import url('base.css');
+@import url('components.css');
+@import url('floorplan.css');

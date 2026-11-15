@@ -1,0 +1,105 @@
+/* ===== CSS Custom Properties & Paleta Cantinho Certo ===== */
+:root {
+  /* Cores Principais (Modo Claro) */
+  --bg: #F8F6F0;                /* Linho suave de fundo */
+  --text: #2D2A26;              /* Grafite quente para texto principal (12.8:1) */
+  --text2: #645D54;             /* Grafite secundário (5.4:1) */
+  --card: #EFECE6;              /* Marfim para superfícies e cards */
+  --card-hover: #E8E4DC;        /* Marfim escurecido sutil para interações */
+  --line: #E4DFD5;              /* Linhas divisórias e bordas sutis */
+  --sage: #9EA89F;              /* Verde sálvia de apoio para selos e ícones */
+  --sage-dark: #6D7E70;         /* Sálvia com contraste acessível para elementos gráficos */
+  --btn: #A65A41;               /* Terracota escurecido com alto contraste (5.05:1 com branco) */
+  --btn-hover: #8F4730;         /* Terracota escurecido para hover */
+  --btn-text: #FFFFFF;          /* Branco puro */
+  --accent: #B5694F;            /* Terracota de acento decorativo */
+  --focus-ring: #A65A41;        /* Anel de foco com contraste >= 3:1 (WCAG A1) */
+  --page-glow: rgba(181, 105, 79, 0.12);
+  --page-glow-sage: rgba(109, 126, 112, 0.08);
+
+  /* Estados de Feedback */
+  --success-bg: #EAF2EB;
+  --success-text: #285430;
+  --success-border: #BCD9C0;
+  --error-bg: #FBECE8;
+  --error-text: #8C2E1B;
+  --error-border: #E8B9AF;
+
+  /* Sombras Suaves */
+  --shadow-sm: 0 1px 3px rgba(45, 42, 38, 0.05);
+  --shadow-md: 0 4px 12px rgba(45, 42, 38, 0.08);
+  --shadow-lg: 0 8px 24px rgba(45, 42, 38, 0.12);
+
+  /* Espaçamentos e Geometria */
+  --section-py: 72px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  /* Tipografia */
+  --font: 'Nunito', 'Varela Round', ui-rounded, system-ui, -apple-system, sans-serif;
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+}
+
+/* Modo Escuro */
+[data-theme="dark"] {
+  --bg: #1F1D1A;
+  --text: #F1ECE2;
+  --text2: #BDB6AA;
+  --card: #2A2723;
+  --card-hover: #332F2A;
+  --line: #38342F;
+  --sage: #9EA89F;
+  --sage-dark: #AEC0B0;
+  --btn: #D98F75;
+  --btn-hover: #E2A18A;
+  --btn-text: #1F1D1A;
+  --accent: #D98F75;
+  --focus-ring: #D98F75;
+  --page-glow: rgba(217, 143, 117, 0.1);
+  --page-glow-sage: rgba(158, 168, 159, 0.06);
+
+  --success-bg: #1B2B1F;
+  --success-text: #A7DEB1;
+  --success-border: #2D4C34;
+  --error-bg: #351C17;
+  --error-text: #F3B3A5;
+  --error-border: #5E2E24;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    --bg: #1F1D1A;
+    --text: #F1ECE2;
+    --text2: #BDB6AA;
+    --card: #2A2723;
+    --card-hover: #332F2A;
+    --line: #38342F;
+    --sage: #9EA89F;
+    --sage-dark: #AEC0B0;
+    --btn: #D98F75;
+    --btn-hover: #E2A18A;
+    --btn-text: #1F1D1A;
+    --accent: #D98F75;
+    --focus-ring: #D98F75;
+    --page-glow: rgba(217, 143, 117, 0.1);
+    --page-glow-sage: rgba(158, 168, 159, 0.06);
+
+    --success-bg: #1B2B1F;
+    --success-text: #A7DEB1;
+    --success-border: #2D4C34;
+    --error-bg: #351C17;
+    --error-text: #F3B3A5;
+    --error-border: #5E2E24;
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  }
+}

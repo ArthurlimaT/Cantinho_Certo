@@ -1,0 +1,134 @@
+/* ===== Planta Baixa Interativa SVG & Painel (WCAG A6) ===== */
+.floor-plan-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 55fr) minmax(0, 45fr);
+  gap: 32px;
+  align-items: flex-start;
+  margin-top: 32px;
+}
+
+.floor-plan-visual {
+  min-width: 0;
+}
+
+.floor-plan-svg {
+  min-width: 0;
+}
+
+.floor-plan-svg svg {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  outline: none;
+}
+
+.room {
+  fill: var(--card);
+  stroke: var(--text);
+  stroke-width: 1.5;
+  cursor: pointer;
+  transition: fill var(--transition-fast), opacity var(--transition-fast), stroke-width var(--transition-fast);
+}
+
+.room:hover,
+.room:focus {
+  fill: var(--sage);
+  opacity: 0.85;
+}
+.room:hover + .room-label,
+.room:focus + .room-label,
+.room.is-selected + .room-label {
+  fill: #2D2A26;
+}
+
+.room.is-selected,
+.room[aria-pressed="true"] {
+  fill: var(--sage);
+  stroke: var(--btn);
+  stroke-width: 2.5;
+  opacity: 0.95;
+}
+
+.room-label {
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 700;
+  fill: var(--text);
+  pointer-events: none;
+  text-anchor: middle;
+}
+
+.floor-plan-panel {
+  min-width: 0;
+}
+
+.floor-plan-panel .card {
+  min-height: 220px;
+}
+
+.floor-plan-tips {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.floor-plan-tip {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--text2);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.floor-plan-tip:last-child {
+  border-bottom: none;
+}
+
+.floor-plan-tip-icon {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: 0.55em;
+  border-radius: 50%;
+  background: var(--sage-dark);
+}
+
+.floor-plan-tip-text {
+  flex: 1;
+}
+
+.floor-plan-room-controls {
+  display: none;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.room-select-btn {
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  color: var(--text2);
+  font: 700 0.85rem var(--font);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+.room-select-btn:hover,
+.room-select-btn[aria-pressed="true"] {
+  border-color: var(--sage-dark);
+  background: var(--sage);
+  color: #2D2A26;
+}
+
+@media (max-width: 768px) {
+  .floor-plan-wrap {
+    grid-template-columns: 1fr;
+  }
+  .floor-plan-room-controls {
+    display: grid;
+  }
+}

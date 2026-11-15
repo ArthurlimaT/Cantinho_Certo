@@ -1,0 +1,465 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Cantinho Certo — Seu guia para a primeira mudança">
+
+  <!-- ========== SEÇÃO: INÍCIO ========== -->
+  <section class="view active" data-v="inicio" id="inicio" aria-labelledby="h-inicio">
+    <div class="container">
+      <div class="hero">
+        <h1 id="h-inicio">Seu primeiro cantinho, do seu jeito.</h1>
+        <p class="subtitle">Um guia prático e acolhedor para quem está fazendo a primeira mudança para um apartamento pequeno. Sem desespero e sem desperdício de dinheiro.</p>
+
+        <p class="question">Em que momento você está?</p>
+        <div class="btn-group btn-group--center">
+          <button class="btn" data-start="planejar" type="button">Ainda estou procurando um lugar</button>
+          <button class="btn btn-outline" data-start="mudar" type="button">Já escolhi, falta organizar</button>
+          <button class="btn btn-outline" data-start="mobiliar" type="button">Já me mudei e preciso mobiliar</button>
+        </div>
+      </div>
+
+      <!-- Indicador visual dos 4 passos -->
+      <div class="steps-visual" id="steps-visual" aria-hidden="true">
+        <div class="step-pill" data-step="planejar"><span class="step-num">1</span> Planejar</div>
+        <div class="step-pill" data-step="escolher"><span class="step-num">2</span> Escolher</div>
+        <div class="step-pill" data-step="mudar"><span class="step-num">3</span> Mudar</div>
+        <div class="step-pill" data-step="mobiliar"><span class="step-num">4</span> Mobiliar</div>
+      </div>
+
+      <!-- Chamada para o Diário -->
+      <div class="diary-call">
+        <div class="icon-circle" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div class="diary-call-text">
+          <h3>Diário da Mudança</h3>
+          <p>Custos reais, erros sinceros e acertos de quem está vivendo essa mudança na pele agora mesmo.</p>
+        </div>
+        <a href="#diario" class="btn btn-outline">Conhecer o Diário</a>
+      </div>
+
+      <!-- Sobre o projeto -->
+      <div class="about-section">
+        <h2>Sobre o Cantinho Certo</h2>
+        <p>O Cantinho Certo nasceu da experiência real de quem está passando pela mudança agora — reunindo tudo o que gostaríamos de ter sabido antes de dar o primeiro passo.</p>
+        <p>Reunimos checklists interativos, dicas práticas de visitação e listas de compras conscientes para transformar esse momento em uma conquista leve e organizada.</p>
+      </div>
+
+      <!-- Newsletter CTA (WCAG 3.1) -->
+      <div class="newsletter-cta">
+        <h3>Receba dicas práticas no seu e-mail</h3>
+        <p>Uma vez por semana, direto ao ponto e sem spam. Dicas e alertas para o seu novo lar.</p>
+        <form class="newsletter-form" id="newsletter-form" novalidate>
+          <input type="email" id="newsletter-email" name="email" placeholder="Seu melhor e-mail" autocomplete="email" required aria-label="Endereço de e-mail">
+          <button class="btn" type="submit">Quero receber</button>
+        </form>
+        <div id="newsletter-feedback" class="newsletter-feedback" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ETAPA 1: PLANEJAR ========== -->
+  <section class="view" data-v="planejar" id="planejar" aria-labelledby="h-planejar" hidden>
+    <div class="container">
+      <div class="view-intro">
+        <h1 id="h-planejar">1. Planejar</h1>
+        <p>Antes de sair visitando apartamentos, vale a pena colocar os números no papel. Um orçamento seguro e clareza nos documentos evitam imprevistos no contrato.</p>
+      </div>
+
+      <div class="card card--spacing">
+        <h2>Antes de fechar contrato</h2>
+        <p>Marque cada item conforme for resolvendo. O progresso é salvo no seu navegador automaticamente.</p>
+
+        <ul class="checklist" role="list" data-group="planejar">
+          <li class="checklist-item">
+            <label class="checklist-label" for="chk-planejar-orcamento">
+              <input type="checkbox" class="checklist-input" id="chk-planejar-orcamento" data-group="planejar" data-item="orcamento">
+              <span class="checklist-box" aria-hidden="true">
+                <svg viewBox="0 0 16 16"><polyline points="3.5 8.5 6.5 11.5 12.5 4.5"/></svg>
+              </span>
+              <span class="checklist-text"><strong>Definir orçamento mensal máximo</strong><span>Inclua aluguel, condomínio, IPTU, contas e uma margem para imprevistos.</span></span>
+            </label>
+          </li>
+          <li class="checklist-item">
+            <label class="checklist-label" for="chk-planejar-bairros">
+              <input type="checkbox" class="checklist-input" id="chk-planejar-bairros" data-group="planejar" data-item="bairros">
+              <span class="checklist-box" aria-hidden="true">
+                <svg viewBox="0 0 16 16"><polyline points="3.5 8.5 6.5 11.5 12.5 4.5"/></svg>
+              </span>
+              <span class="checklist-text"><strong>Mapear bairros prioritários</strong><span>Considere transporte, serviços essenciais e o tempo de deslocamento.</span></span>
+            </label>
+          </li>
+          <li class="checklist-item">
+            <label class="checklist-label" for="chk-planejar-documentacao">
+              <input type="checkbox" class="checklist-input" id="chk-planejar-documentacao" data-group="planejar" data-item="documentacao">
+              <span class="checklist-box" aria-hidden="true">
+                <svg viewBox="0 0 16 16"><polyline points="3.5 8.5 6.5 11.5 12.5 4.5"/></svg>
+              </span>
+              <span class="checklist-text"><strong>Separar a documentação</strong><span>Confira comprovantes de renda, documentos pessoais e garantias exigidas.</span></span>
+            </label>
+          </li>
+          <li class="checklist-item">
+            <label class="checklist-label" for="chk-planejar-precos">
+              <input type="checkbox" class="checklist-input" id="chk-planejar-precos" data-group="planejar" data-item="precos">
+              <span class="checklist-box" aria-hidden="true">
+                <svg viewBox="0 0 16 16"><polyline points="3.5 8.5 6.5 11.5 12.5 4.5"/></svg>
+              </span>
+              <span class="checklist-text"><strong>Pesquisar preços da região</strong><span>Compare imóveis semelhantes para negociar com mais segurança.</span></span>
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="step-complete-block" id="sc-planejar">
+        <nav class="step-navigation" aria-label="Navegação entre etapas">
+          <span class="step-navigation-spacer" aria-hidden="true"></span>
+          <span class="step-indicator">Passo 1 de 4</span>
+          <button class="btn" data-done="planejar" data-next="escolher" type="button">Avançar para Escolher</button>
+        </nav>
+        <div class="step-complete-done" role="status">
+          <span>Planejamento concluído. Você pode avançar quando quiser.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ETAPA 2: ESCOLHER ========== -->
+  <section class="view" data-v="escolher" id="escolher" aria-labelledby="h-escolher" hidden>
+    <div class="container">
+      <div class="view-intro">
+        <h1 id="h-escolher">2. Escolher</h1>
+        <p>Na visita presencial, o olhar atento faz toda a diferença. Use a planta interativa para checar cada cômodo e o guia de visita para não esquecer nenhum detalhe técnico.</p>
+      </div>
+
+      <!-- Planta Baixa Interativa SVG (WCAG A6) -->
+      <div class="floor-plan-wrap">
+        <div class="floor-plan-visual">
+          <div class="floor-plan-svg">
+            <svg viewBox="0 0 400 320" aria-label="Planta baixa interativa do apartamento. Selecione um cômodo para conferir dicas." role="group">
+            <!-- Fundo do apartamento -->
+            <rect x="0" y="0" width="400" height="320" rx="12" fill="var(--bg)" stroke="var(--line)" stroke-width="1"/>
+            <rect x="20" y="20" width="360" height="280" rx="4" fill="none" stroke="var(--text)" stroke-width="2"/>
+
+            <!-- Sala -->
+            <rect class="room" data-k="sala" x="20" y="20" width="200" height="160" tabindex="0" role="button" aria-pressed="false" aria-label="Sala"/>
+            <text class="room-label" x="120" y="105">Sala</text>
+
+            <!-- Quarto -->
+            <rect class="room" data-k="quarto" x="220" y="20" width="160" height="160" tabindex="0" role="button" aria-pressed="false" aria-label="Quarto"/>
+            <text class="room-label" x="300" y="105">Quarto</text>
+
+            <!-- Cozinha -->
+            <rect class="room" data-k="cozinha" x="20" y="180" width="200" height="120" tabindex="0" role="button" aria-pressed="false" aria-label="Cozinha"/>
+            <text class="room-label" x="120" y="245">Cozinha</text>
+
+            <!-- Banheiro -->
+            <rect class="room" data-k="banheiro" x="220" y="180" width="160" height="120" tabindex="0" role="button" aria-pressed="false" aria-label="Banheiro"/>
+            <text class="room-label" x="300" y="245">Banheiro</text>
+
+            <!-- Paredes internas -->
+            <line x1="220" y1="20" x2="220" y2="300" stroke="var(--text)" stroke-width="2"/>
+            <line x1="20" y1="180" x2="380" y2="180" stroke="var(--text)" stroke-width="2"/>
+
+            <!-- Passagens de portas -->
+            <line x1="100" y1="180" x2="140" y2="180" stroke="var(--bg)" stroke-width="4"/>
+            <line x1="220" y1="90" x2="220" y2="130" stroke="var(--bg)" stroke-width="4"/>
+            <line x1="280" y1="180" x2="320" y2="180" stroke="var(--bg)" stroke-width="4"/>
+            </svg>
+          </div>
+          <div class="floor-plan-room-controls" role="group" aria-label="Selecionar cômodo">
+            <button type="button" class="room-select-btn" data-room-select="sala" aria-pressed="true">Sala</button>
+            <button type="button" class="room-select-btn" data-room-select="quarto" aria-pressed="false">Quarto</button>
+            <button type="button" class="room-select-btn" data-room-select="cozinha" aria-pressed="false">Cozinha</button>
+            <button type="button" class="room-select-btn" data-room-select="banheiro" aria-pressed="false">Banheiro</button>
+          </div>
+        </div>
+
+        <div class="floor-plan-panel" id="floor-plan-panel" aria-live="polite">
+          <div class="card">
+            <h3 id="pt">Selecione um cômodo</h3>
+            <p id="pd">Clique ou navegue com o teclado pelos cômodos para ler o que inspecionar com atenção.</p>
+            <ul id="pu" class="floor-plan-tips"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="visit-checklist" id="visit-checklist">
+        <div class="section-heading-row">
+          <div>
+            <h2 class="section-subtitle-heading">Guia de Visita Presencial</h2>
+            <p>Um roteiro prático para observar o imóvel com calma antes de decidir.</p>
+          </div>
+          <button class="btn btn-outline print-checklist-btn" type="button" data-print-checklist>Imprimir checklist</button>
+        </div>
+        <p class="print-only visit-print-brand">Cantinho Certo · Guia de visita presencial</p>
+        <div class="visit-guide-featured">
+          <article class="card visit-card visit-card--featured">
+            <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div>
+            <div><h3>Medidas</h3><p>Leve uma trena. Confira portas, janelas e vãos para saber se os móveis cabem sem surpresas.</p></div>
+          </article>
+          <article class="card visit-card visit-card--featured">
+            <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
+            <div><h3>Infiltração</h3><p>Observe rodapés, rejuntes e teto. Manchas, bolhas ou cheiro de mofo podem indicar umidade.</p></div>
+          </article>
+        </div>
+        <div class="visit-guide-compact">
+          <article class="visit-card visit-card--compact">
+            <h3>Tomadas</h3>
+            <p>Conte os pontos de energia e confira a voltagem antes de planejar os eletrodomésticos.</p>
+          </article>
+          <article class="visit-card visit-card--compact">
+            <h3>Ruído</h3>
+            <p>Reserve alguns minutos em silêncio, com as janelas abertas, para perceber os sons do entorno.</p>
+          </article>
+          <article class="visit-card visit-card--compact">
+            <h3>Luz natural</h3>
+            <p>Observe como a luz entra em diferentes horários e quais cômodos recebem sol direto.</p>
+          </article>
+          <article class="visit-card visit-card--compact">
+            <h3>Ventilação</h3>
+            <p>Abra portas e janelas para verificar a circulação de ar entre os ambientes.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="step-complete-block" id="sc-escolher">
+        <nav class="step-navigation" aria-label="Navegação entre etapas">
+          <a class="step-previous" href="#planejar">← Voltar para Planejar</a>
+          <span class="step-indicator">Passo 2 de 4</span>
+          <button class="btn" data-done="escolher" data-next="mudar" type="button">Avançar para Mudar →</button>
+        </nav>
+        <div class="step-complete-done" role="status">
+          <span>Visita concluída. Você pode avançar quando quiser.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ETAPA 3: MUDAR ========== -->
+  <section class="view" data-v="mudar" id="mudar" aria-labelledby="h-mudar" hidden>
+    <div class="container">
+      <div class="view-intro">
+        <h1 id="h-mudar">3. Mudar</h1>
+        <p>A transição pode ser tranquila com uma sequência clara de prioridades no dia da chegada e nas primeiras 48 horas.</p>
+      </div>
+
+      <div class="card card--spacing">
+        <h2>No dia da mudança</h2>
+        <ul class="checklist" role="list" data-group="mudar-dia">
+          <li class="checklist-item">
+            <label class="checklist-label" for="chk-mudar-caixa">
+              <input type="checkbox" class="checklist-input" id="chk-mudar-caixa" data-group="mudar-dia" data-item="caixa-essencial">
+              <span class="checklist-box" aria-hidden="true">
+                <svg viewBox="0 0 16 16"><polyline points="3.5 8.5 6.5 11.5 12.5 4.5"/></svg>
+              </span>
+              <span class="checklist-text"><strong>Preparar a caixa essencial</strong><span>Deixe carregador, lanche, remédios, toalha, roupa de cama e papel higiênico à mão.</span></span>
+            </label>
+          </li>
+          <li class="checklist-item">
+            <label class="checklist-label" for="chk-mudar-fotos">
+              <input type="checkbox" class="checklist-input" id="chk-mudar-fotos" data-group="mudar-dia" data-item="fotos">
+              <span class="checklist-box" aria-hidden="true">
+                <svg viewBox="0 0 16 16"><polyline points="3.5 8.5 6.5 11.5 12.5 4.5"/></svg>
+              </span>
+              <span class="checklist-text"><strong>Registrar o estado do imóvel</strong><span>Fotografe e filme os cômodos vazios antes de descarregar as caixas.</span></span>
+            </label>
+          </li>
+          <li class="checklist-item">
+            <label class="checklist-label" for="chk-mudar-medidores">
+              <input type="checkbox" class="checklist-input" id="chk-mudar-medidores" data-group="mudar-dia" data-item="medidores">
+              <span class="checklist-box" aria-hidden="true">
+                <svg viewBox="0 0 16 16"><polyline points="3.5 8.5 6.5 11.5 12.5 4.5"/></svg>
+              </span>
+              <span class="checklist-text"><strong>Anotar os medidores</strong><span>Registre água, energia e gás no momento da entrada.</span></span>
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card card--spacing">
+        <h2>Depois de entrar</h2>
+        <ul class="checklist" role="list" data-group="mudar-depois">
+          <li class="checklist-item">
+            <label class="checklist-label" for="chk-mudar-endereco">
+              <input type="checkbox" class="checklist-input" id="chk-mudar-endereco" data-group="mudar-depois" data-item="endereco">
+              <span class="checklist-box" aria-hidden="true">
+                <svg viewBox="0 0 16 16"><polyline points="3.5 8.5 6.5 11.5 12.5 4.5"/></svg>
+              </span>
+              <span class="checklist-text"><strong>Atualizar seu endereço</strong><span>Avise bancos, trabalho, entregas recorrentes e serviços por assinatura.</span></span>
+            </label>
+          </li>
+          <li class="checklist-item">
+            <label class="checklist-label" for="chk-mudar-vizinhos">
+              <input type="checkbox" class="checklist-input" id="chk-mudar-vizinhos" data-group="mudar-depois" data-item="vizinhos">
+              <span class="checklist-box" aria-hidden="true">
+                <svg viewBox="0 0 16 16"><polyline points="3.5 8.5 6.5 11.5 12.5 4.5"/></svg>
+              </span>
+              <span class="checklist-text"><strong>Conhecer a rotina do condomínio</strong><span>Converse com a administração e confira regras de lixo, horários e mudanças.</span></span>
+            </label>
+          </li>
+          <li class="checklist-item">
+            <label class="checklist-label" for="chk-mudar-chaves">
+              <input type="checkbox" class="checklist-input" id="chk-mudar-chaves" data-group="mudar-depois" data-item="chaves">
+              <span class="checklist-box" aria-hidden="true">
+                <svg viewBox="0 0 16 16"><polyline points="3.5 8.5 6.5 11.5 12.5 4.5"/></svg>
+              </span>
+              <span class="checklist-text"><strong>Testar chaves e acessos</strong><span>Verifique cópias, tags e o funcionamento das fechaduras.</span></span>
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="step-complete-block" id="sc-mudar">
+        <nav class="step-navigation" aria-label="Navegação entre etapas">
+          <a class="step-previous" href="#escolher">← Voltar para Escolher</a>
+          <span class="step-indicator">Passo 3 de 4</span>
+          <button class="btn" data-done="mudar" data-next="mobiliar" type="button">Avançar para Mobiliar →</button>
+        </nav>
+        <div class="step-complete-done" role="status">
+          <span>Mudança concluída. Você pode avançar quando quiser.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ETAPA 4: MOBILIAR ========== -->
+  <section class="view" data-v="mobiliar" id="mobiliar" aria-labelledby="h-mobiliar" hidden>
+    <div class="container">
+      <div class="view-intro">
+        <h1 id="h-mobiliar">4. Mobiliar</h1>
+        <p>Não tente mobiliar o apartamento inteiro na primeira semana. Organize em camadas de prioridade — seu bolso e o espaço agradecem.</p>
+      </div>
+
+      <!-- Estante de Prioridades -->
+      <div class="shelf-filter" role="group" aria-label="Filtrar itens por prioridade">
+        <button type="button" class="shelf-filter-btn" data-priority-filter="all" aria-pressed="true">Todos</button>
+        <button type="button" class="shelf-filter-btn" data-priority-filter="essential" aria-pressed="false">Essencial</button>
+        <button type="button" class="shelf-filter-btn" data-priority-filter="soon" aria-pressed="false">Logo depois</button>
+        <button type="button" class="shelf-filter-btn" data-priority-filter="later" aria-pressed="false">Pode esperar</button>
+      </div>
+      <div class="shelf">
+        <div class="shelf-tier" data-priority="essential">
+          <h3>Essencial nos primeiros dias</h3>
+          <p class="shelf-tier-desc">Sem estes itens, a rotina básica do dia a dia não funciona.</p>
+          <ul class="shelf-items">
+            <li><span>Colchão confortável e jogo de cama</span></li>
+            <li><span>Kit básico de higiene e toalhas de banho</span></li>
+            <li><span>Frigideira, panela básica, pratos e talheres</span></li>
+            <li><span>Lâmpadas instaladas em todos os pontos</span></li>
+          </ul>
+        </div>
+
+        <div class="shelf-tier" data-priority="soon">
+          <h3>Logo depois</h3>
+          <p class="shelf-tier-desc">Torna o apartamento muito mais prático e funcional na segunda semana.</p>
+          <ul class="shelf-items">
+            <li><span>Mesa compacta com duas cadeiras</span></li>
+            <li><span>Vassoura, rodo, balde e produtos de limpeza</span></li>
+            <li><span>Varal de chão dobrável ou de teto</span></li>
+            <li><span>Roteador e plano de internet instalado</span></li>
+          </ul>
+        </div>
+
+        <div class="shelf-tier" data-priority="later">
+          <h3>Pode esperar</h3>
+          <p class="shelf-tier-desc">Itens decorativos e de conforto que podem aguardar o orçamento se restabelecer.</p>
+          <ul class="shelf-items">
+            <li><span>Sofá definitivo ou poltrona</span></li>
+            <li><span>Quadros, espelhos e tapetes</span></li>
+            <li><span>Plantinhas para alegrar os cantos</span></li>
+            <li><span>Televisão secundária e som</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step-complete-block" id="sc-mobiliar">
+        <nav class="step-navigation" aria-label="Navegação entre etapas">
+          <a class="step-previous" href="#mudar">← Voltar para Mudar</a>
+          <span class="step-indicator">Passo 4 de 4</span>
+          <button class="btn" data-done="mobiliar" data-next="" type="button">Concluir o guia</button>
+        </nav>
+        <div class="step-complete-done" role="status">
+          <span>Guia concluído. Parabéns por cada passo da sua mudança.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO: DIÁRIO ========== -->
+  <section class="view" data-v="diario" id="diario" aria-labelledby="h-diario" hidden>
+    <div class="container">
+      <div class="view-intro">
+        <h1 id="h-diario">Diário da Mudança</h1>
+        <p>Relatos sinceros, custos na ponta do lápis e os perrengues que ninguém conta antes de morar sozinho pela primeira vez.</p>
+      </div>
+
+      <div class="diary-grid">
+        <article class="card diary-card">
+          <span class="badge-soon">Em breve</span>
+          <div class="diary-meta"><span class="diary-category">Mudança</span><span>Leitura de 3 min</span><span>Por Arthur</span></div>
+          <h3>Dia 1: O chão é meu</h3>
+          <p>O primeiro dia no apartamento totalmente vazio. A sensação de liberdade misturada com eco ao falar.</p>
+          <small>Post completo em breve</small>
+        </article>
+
+        <article class="card diary-card">
+          <span class="badge-soon">Em breve</span>
+          <div class="diary-meta"><span class="diary-category">Finanças</span><span>Leitura de 3 min</span><span>Por Arthur</span></div>
+          <h3>Custos que ninguém avisa</h3>
+          <p>O bujão de gás, as lâmpadas novas, a taxa de mudança e as pequenas contas que aparecem juntas.</p>
+          <small>Post completo em breve</small>
+        </article>
+
+        <article class="card diary-card">
+          <span class="badge-soon">Em breve</span>
+          <div class="diary-meta"><span class="diary-category">Perrengues</span><span>Leitura de 3 min</span><span>Por Arthur</span></div>
+          <h3>O erro que virou aprendizado</h3>
+          <p>Comprei uma mesa sem medir o vão da porta do elevador. Lição aprendida para o resto da vida.</p>
+          <small>Post completo em breve</small>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO: FERRAMENTAS ========== -->
+  <section class="view" data-v="ferramentas" id="ferramentas" aria-labelledby="h-ferramentas" hidden>
+    <div class="container">
+      <div class="view-intro">
+        <h1 id="h-ferramentas">Ferramentas</h1>
+        <p>Calculadoras e utilitários que estamos desenvolvendo para facilitar cada detalhe da sua nova rotina.</p>
+      </div>
+
+      <div class="tools-grid">
+        <div class="card tool-card">
+          <span class="badge-soon">Em breve</span>
+          <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></div>
+          <h3>Planilha de Custos</h3>
+          <p>Calculadora com despesas de mudança e custos iniciais organizados.</p>
+        </div>
+
+        <div class="card tool-card">
+          <span class="badge-soon">Em breve</span>
+          <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+          <h3>Simulador de Espaço</h3>
+          <p>Arraste móveis em escala e veja se a circulação fica confortável.</p>
+        </div>
+
+        <div class="card tool-card">
+          <span class="badge-soon">Em breve</span>
+          <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div>
+          <h3>Caderno de Medidas</h3>
+          <p>Guarde as dimensões de cada parede e janela no seu celular.</p>
+        </div>
+
+        <div class="card tool-card">
+          <span class="badge-soon">Em breve</span>
+          <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+          <h3>Lista de Enxoval</h3>
+          <p>Guia do que comprar primeiro, separado por faixas de preço realistas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

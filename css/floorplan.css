@@ -1,0 +1,103 @@
+/* ===== Planta Baixa Interativa SVG & Painel (WCAG A6) ===== */
+.floor-plan-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: flex-start;
+  margin-top: 32px;
+}
+
+.floor-plan-svg {
+  flex: 1;
+  min-width: 280px;
+  max-width: 420px;
+}
+
+.floor-plan-svg svg {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  outline: none;
+}
+
+.room {
+  fill: var(--card);
+  stroke: var(--text);
+  stroke-width: 1.5;
+  cursor: pointer;
+  transition: fill var(--transition-fast), opacity var(--transition-fast), stroke-width var(--transition-fast);
+}
+
+.room:hover,
+.room:focus {
+  fill: var(--sage);
+  opacity: 0.85;
+}
+
+.room.is-selected,
+.room[aria-pressed="true"] {
+  fill: var(--sage);
+  stroke: var(--btn);
+  stroke-width: 2.5;
+  opacity: 0.95;
+}
+
+.room-label {
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 700;
+  fill: var(--text);
+  pointer-events: none;
+  text-anchor: middle;
+}
+
+.floor-plan-panel {
+  flex: 1;
+  min-width: 260px;
+}
+
+.floor-plan-panel .card {
+  min-height: 220px;
+}
+
+.floor-plan-tips {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.floor-plan-tip {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--text2);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.floor-plan-tip:last-child {
+  border-bottom: none;
+}
+
+.floor-plan-tip-icon {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: 0.55em;
+  border-radius: 50%;
+  background: var(--sage-dark);
+}
+
+.floor-plan-tip-text {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .floor-plan-wrap {
+    flex-direction: column;
+  }
+  .floor-plan-svg {
+    max-width: 100%;
+  }
+}

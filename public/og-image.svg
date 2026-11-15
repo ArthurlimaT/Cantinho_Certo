@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#F8F6F0"/>
+  <circle cx="1070" cy="90" r="290" fill="#EFECE6"/>
+  <circle cx="1080" cy="535" r="230" fill="#E8E4DC"/>
+  <path d="M838 630c20-122 16-220-12-294-24-63-32-137-3-258" stroke="#6D7E70" stroke-width="4" stroke-linecap="round"/>
+  <path d="M831 410c-65-7-111-42-137-99 65 4 111 38 137 99Zm-12-95c52-25 82-66 89-125-52 23-81 63-89 125Zm-8-72c-58-18-94-55-111-112 57 13 95 50 111 112Zm-1-80c44-33 66-81 61-141-47 31-69 78-61 141Z" stroke="#6D7E70" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="88" y="82" width="52" height="52" rx="15" fill="#A65A41"/>
+  <path d="m99 108 15-12 15 12v15h-30v-15Z" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M109 123v-10h10v10" stroke="#D8E0D8" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="160" y="118" fill="#2D2A26" font-family="Arial, sans-serif" font-size="29" font-weight="700">Cantinho Certo</text>
+  <text x="88" y="278" fill="#2D2A26" font-family="Arial, sans-serif" font-size="62" font-weight="700">Sua primeira mudança,</text>
+  <text x="88" y="354" fill="#2D2A26" font-family="Arial, sans-serif" font-size="62" font-weight="700">um passo de cada vez.</text>
+  <text x="92" y="421" fill="#645D54" font-family="Arial, sans-serif" font-size="28">Um guia prático para começar seu novo lar com calma.</text>
+  <rect x="88" y="480" width="160" height="7" rx="3.5" fill="#B5694F"/>
+</svg>
