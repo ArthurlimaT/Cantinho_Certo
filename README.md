@@ -38,30 +38,38 @@ cantinhoCerto/
 │   ├── favicon.svg          # Ícone da marca
 │   ├── hero-botanical.svg   # Ilustração decorativa do início
 │   ├── og-image.png         # Prévia para compartilhamento
-│   └── js/                  # Módulos JavaScript (storage, theme, checklist, floorplan, etc.)
+│   └── js/                  # Módulos JavaScript do site e ferramentas isoladas
 ├── src/
 │   ├── layouts/
-│   │   └── Layout.astro     # Layout base com Header, Navbar, Plantinha e Footer
+│   │   └── Layout.astro     # Layout base com cabeçalho, navegação e rodapé
 │   ├── pages/
-│   │   └── index.astro      # Página principal com todas as seções e navegação
+│   │   └── index.astro      # Página principal
+│   ├── components/
+│   │   └── tools/           # Catálogo e interfaces das ferramentas
 │   └── styles/              # Design System em CSS
 │       ├── variables.css    # Paleta linho, grafite, sálvia, terracota e temas claro/escuro
 │       ├── base.css         # Reset, tipografia Nunito e foco acessível (A1)
-│       ├── components.css   # Botões, checklists nativos, cards e newsletter
-│       └── floorplan.css    # Planta baixa interativa SVG e painel de dicas
+│       ├── components.css   # Botões, checklists nativos e cards
+│       ├── floorplan.css    # Planta baixa do guia de visita
+│       └── tools.css        # Catálogo e estilos das quatro ferramentas
 └── dist/                    # Pasta de saída após o comando `npm run build`
 ```
 
 ---
 
-## Funcionalidades Preservadas
+## Funcionalidades
 
 * **Progresso da mudança:** Barra acessível que combina etapas concluídas e tarefas marcadas.
 * **Detalhes botânicos:** Ilustração sutil no início e na seção sobre o projeto.
+* **Simulador de Espaço 2D:** Plantas independentes para sala, quarto e cozinha, com posicionamento de móveis por toque, mouse ou teclado, avisos de circulação, comparação proporcional de camas e salvamento local.
+* **Planilha de Custos:** Despesas da mudança organizadas em 6 categorias (aluguel, frete, mobília, contas, reformas, imprevistos) com soma automática e persistência local.
+* **Caderno de Medidas:** Registro de dimensões de cômodos, portas e janelas com cálculo de área e observações.
+* **Lista de Enxoval:** Lista de compras categorizada por prioridade (essencial, logo depois, pode esperar) com preços estimados e marcação de itens comprados.
+* **Dados locais:** As quatro ferramentas mantêm seus registros separados no armazenamento do navegador, sem sincronização entre dispositivos.
 * **Planta Baixa Interativa SVG:** Seleção de cômodos (Sala, Quarto, Cozinha, Banheiro) com dicas de vistoria e navegação completa por teclado.
 * **Checklists Nativos & Acessíveis:** `<input type="checkbox">` com persistência segura no `localStorage` e suporte a mouse, toque e teclado.
 * **Modo Claro / Escuro:** Alternância manual persistente com sincronização automática do `prefers-color-scheme`.
-* **Newsletter Validada:** Envio assíncrono com feedback de carregamento, sucesso e erro, e suporte a endpoint configurável (`window.CANTINHO_NEWSLETTER_ENDPOINT`).
+* **Newsletter:** Temporariamente desativada; será integrada a um serviço real de envio futuramente.
 * **Acessibilidade WCAG 2.2 AA:** Anel de foco terracota, skip link, anúncios via `aria-live` e hierarquia de títulos semântica.
 * **Guia de visita imprimível:** Checklist com composição otimizada para impressão em folha A4.
 * **Prévia de compartilhamento:** Metadados Open Graph e Twitter com imagem social em alta resolução.

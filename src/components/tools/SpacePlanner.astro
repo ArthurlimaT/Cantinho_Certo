@@ -1,0 +1,183 @@
+<section class="space-planner-panel" id="space-planner-panel" data-tool-panel="space-planner" aria-labelledby="h-space-planner" hidden>
+  <div class="space-planner-heading">
+    <button class="tool-back-button" type="button" data-tools-back="space-planner">
+      <span aria-hidden="true">←</span> Voltar para ferramentas
+    </button>
+    <p class="tools-eyebrow">Planejamento do ambiente</p>
+    <h2 id="h-space-planner" tabindex="-1">Simulador de Espaço</h2>
+    <p>Comece pelas medidas do cômodo. Depois, posicione os móveis para comparar opções com calma.</p>
+  </div>
+
+  <div class="space-room-selector">
+    <div class="space-room-selector-heading">
+      <div>
+        <p class="tools-eyebrow">Seus ambientes</p>
+        <p>Um plano independente para cada cômodo.</p>
+      </div>
+      <svg viewBox="0 0 32 40" aria-hidden="true">
+        <path d="M16 38C15 26 15 15 18 2M16 25c-7-1-11-5-13-11 7 0 11 4 13 11Zm1-8c6-2 10-6 11-12-6 2-10 6-11 12Zm-1 14c-5-1-8-4-10-8 5 0 8 3 10 8Z"/>
+      </svg>
+    </div>
+    <div class="space-room-tabs" data-space-room-tabs role="tablist" aria-label="Cômodos do simulador">
+      <button id="space-tab-sala" class="space-room-tab" type="button" role="tab" data-space-room="sala" aria-controls="space-room-workspace" aria-selected="true" tabindex="0">Sala</button>
+      <button id="space-tab-quarto" class="space-room-tab" type="button" role="tab" data-space-room="quarto" aria-controls="space-room-workspace" aria-selected="false" tabindex="-1">Quarto</button>
+      <button id="space-tab-cozinha" class="space-room-tab" type="button" role="tab" data-space-room="cozinha" aria-controls="space-room-workspace" aria-selected="false" tabindex="-1">Cozinha</button>
+    </div>
+  </div>
+
+  <div class="space-planner-layout" id="space-room-workspace" role="tabpanel" aria-labelledby="space-tab-sala" tabindex="-1">
+    <div class="space-controls-card">
+      <div class="space-card-heading">
+        <span class="space-step-number" aria-hidden="true">01</span>
+        <div>
+          <h3>Defina o espaço — <span data-current-room-title>Sala</span></h3>
+          <p>Medidas internas em metros; ajuste às dimensões reais.</p>
+        </div>
+      </div>
+
+      <form class="space-room-form" id="space-room-form">
+        <div class="space-measurement-grid">
+          <div class="space-field">
+            <label for="space-room-width">Largura</label>
+            <div class="space-input-unit">
+              <input id="space-room-width" name="width" type="number" min="1" max="20" step="0.1" value="4.2" inputmode="decimal" required aria-describedby="space-room-help">
+              <span aria-hidden="true">m</span>
+            </div>
+          </div>
+          <div class="space-field">
+            <label for="space-room-depth">Comprimento</label>
+            <div class="space-input-unit">
+              <input id="space-room-depth" name="depth" type="number" min="1" max="20" step="0.1" value="3.6" inputmode="decimal" required aria-describedby="space-room-help">
+              <span aria-hidden="true">m</span>
+            </div>
+          </div>
+        </div>
+        <p class="space-field-help" id="space-room-help" data-room-help>Medida de referência: 4,2 × 3,6 m. Ajuste ao seu espaço.</p>
+        <button class="btn space-submit-button" type="submit" data-room-submit>Desenhar cômodo</button>
+      </form>
+
+      <fieldset class="space-furniture-controls" data-furniture-controls hidden>
+        <legend>Adicione móveis</legend>
+        <label for="space-furniture-type">Escolha um item</label>
+        <select id="space-furniture-type" name="furniture"></select>
+        <button class="btn btn-outline space-add-button" type="button" data-add-furniture>Adicionar à planta</button>
+      </fieldset>
+
+      <div class="space-selected-controls" data-selected-controls hidden>
+        <div class="space-selected-heading">
+          <span class="space-step-number" aria-hidden="true">02</span>
+          <div>
+            <h3>Móvel selecionado</h3>
+            <p data-selected-label>Selecione um móvel na planta.</p>
+          </div>
+        </div>
+        <div class="space-action-row">
+          <button class="btn btn-outline" type="button" data-rotate-furniture>Girar 90°</button>
+          <button class="space-remove-button" type="button" data-remove-furniture>Remover</button>
+        </div>
+        <fieldset class="space-move-fieldset">
+          <legend>Reposicionar</legend>
+          <p>Use as setas no desenho ou os controles abaixo.</p>
+          <div class="space-direction-pad" role="group" aria-label="Mover móvel selecionado em 10 centímetros">
+            <button type="button" data-move="up" aria-label="Mover 10 centímetros para cima">↑</button>
+            <button type="button" data-move="left" aria-label="Mover 10 centímetros para a esquerda">←</button>
+            <span aria-hidden="true"></span>
+            <button type="button" data-move="right" aria-label="Mover 10 centímetros para a direita">→</button>
+            <button type="button" data-move="down" aria-label="Mover 10 centímetros para baixo">↓</button>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="space-plan-card">
+      <div class="space-plan-card-heading">
+        <div>
+          <p class="tools-eyebrow">Visualização 2D</p>
+          <h3 data-plan-heading>Seu ambiente — Sala</h3>
+        </div>
+        <div class="space-plan-meta">
+          <span class="space-save-status" id="space-save-status">Salvamento local</span>
+          <button class="space-reset-button" type="button" data-reset-plan hidden>Apagar planta</button>
+        </div>
+      </div>
+
+      <div class="space-empty-state" data-space-empty>
+        <span class="space-empty-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><rect x="7" y="7" width="34" height="34" rx="2"/><path d="M7 17h34M17 7v34"/></svg>
+        </span>
+        <h4>Um espaço para começar</h4>
+        <p>Ao desenhar o cômodo, você verá a planta em escala por aqui.</p>
+      </div>
+
+      <svg class="space-plan-canvas" id="space-plan-canvas" viewBox="0 0 500 400" role="group" aria-labelledby="space-plan-title space-plan-description" hidden>
+        <title id="space-plan-title">Planta do cômodo</title>
+        <desc id="space-plan-description">Planta em escala. Selecione um móvel, use as setas para reposicionar e pressione R para girar.</desc>
+        <defs>
+          <pattern id="space-grid-pattern" width="50" height="50" patternUnits="userSpaceOnUse">
+            <path d="M50 0H0V50" fill="none" stroke="var(--line)" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect class="space-room-surface" data-room-surface x="24" y="24" width="452" height="352" rx="3"/>
+        <g class="space-room-dimensions" data-room-dimensions aria-hidden="true"></g>
+        <g class="space-items-layer" data-space-items></g>
+      </svg>
+
+      <section class="space-bed-guide" data-space-bedroom-guide aria-labelledby="space-bed-guide-title" hidden>
+        <div class="space-bed-guide-heading">
+          <div>
+            <p class="tools-eyebrow">Referência de proporção</p>
+            <h4 id="space-bed-guide-title">O tamanho da cama muda a circulação</h4>
+            <p>Comparação visual em um quarto de 3 × 3 m.</p>
+          </div>
+          <svg viewBox="0 0 32 40" aria-hidden="true">
+            <path d="M16 38C15 26 15 15 18 2M16 25c-7-1-11-5-13-11 7 0 11 4 13 11Zm1-8c6-2 10-6 11-12-6 2-10 6-11 12Z"/>
+          </svg>
+        </div>
+        <div class="space-bed-comparison">
+          <figure>
+            <svg viewBox="0 0 160 160" role="img" aria-label="Cama de solteiro, 88 por 188 centímetros, em escala dentro de um quarto de 3 por 3 metros">
+              <rect class="space-bed-room" x="20" y="20" width="120" height="120"/>
+              <rect class="space-bed-shape" x="62.4" y="42.4" width="35.2" height="75.2" rx="2"/>
+            </svg>
+            <figcaption><strong>Solteiro</strong><span>88 × 188 cm</span></figcaption>
+          </figure>
+          <figure>
+            <svg viewBox="0 0 160 160" role="img" aria-label="Cama de casal, 138 por 188 centímetros, em escala dentro de um quarto de 3 por 3 metros">
+              <rect class="space-bed-room" x="20" y="20" width="120" height="120"/>
+              <rect class="space-bed-shape" x="52.4" y="42.4" width="55.2" height="75.2" rx="2"/>
+            </svg>
+            <figcaption><strong>Casal</strong><span>138 × 188 cm</span></figcaption>
+          </figure>
+          <figure>
+            <svg viewBox="0 0 160 160" role="img" aria-label="Cama queen, 158 por 198 centímetros, em escala dentro de um quarto de 3 por 3 metros">
+              <rect class="space-bed-room" x="20" y="20" width="120" height="120"/>
+              <rect class="space-bed-shape" x="48.4" y="40.4" width="63.2" height="79.2" rx="2"/>
+            </svg>
+            <figcaption><strong>Queen</strong><span>158 × 198 cm</span></figcaption>
+          </figure>
+        </div>
+        <p class="space-bed-guide-note">Dimensões de referência: podem variar conforme o fabricante. Confira as medidas do colchão e do quarto antes de escolher.</p>
+      </section>
+
+      <div class="space-summary" data-space-summary hidden>
+        <div>
+          <span>Área do cômodo</span>
+          <strong data-room-area>—</strong>
+        </div>
+        <div>
+          <span>Área dos móveis</span>
+          <strong data-furniture-area>—</strong>
+        </div>
+        <div>
+          <span>Passagens abaixo de 60 cm</span>
+          <strong data-narrow-count>—</strong>
+        </div>
+      </div>
+      <p class="space-occupancy-note" data-occupancy-note hidden>A área dos móveis é uma estimativa e pode contar sobreposições. Confira as medidas no local antes de comprar.</p>
+      <p class="space-canvas-help" data-space-canvas-help hidden>Arraste um móvel para reposicionar. No teclado, use as setas para mover, Shift para passos maiores, R para girar e Delete para remover.</p>
+      <p class="space-announcement" id="space-announcement" role="status" aria-live="polite" aria-atomic="true"></p>
+    </div>
+  </div>
+
+  <p class="space-disclaimer">As passagens indicadas são referências entre móveis, não uma certificação de acessibilidade. Considere portas, janelas e circulação real ao conferir o ambiente.</p>
+</section>

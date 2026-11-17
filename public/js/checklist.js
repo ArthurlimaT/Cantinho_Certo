@@ -7,6 +7,15 @@
 (function(window) {
   'use strict';
 
+  function animateCheck(input) {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var indicator = input.nextElementSibling;
+    if (!indicator || !indicator.classList.contains('checklist-box')) return;
+    indicator.classList.remove('is-checking');
+    void indicator.offsetWidth;
+    indicator.classList.add('is-checking');
+  }
+
   function initChecklists() {
     var checklist = window.CantinhoStorage.getChecklist();
     var checkboxes = document.querySelectorAll('.checklist-input');
@@ -33,6 +42,7 @@
       var item = input.getAttribute('data-item') || input.id;
       var key = group ? (group + '-' + item) : item;
       var isChecked = input.checked;
+      animateCheck(input);
 
       var label = input.closest('.checklist-item');
       if (label) {

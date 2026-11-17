@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ToolsSection from '../components/tools/ToolsSection.astro';
 ---
 
 <Layout title="Cantinho Certo — Seu guia para a primeira mudança">
@@ -46,16 +47,6 @@ import Layout from '../layouts/Layout.astro';
         <p>Reunimos checklists interativos, dicas práticas de visitação e listas de compras conscientes para transformar esse momento em uma conquista leve e organizada.</p>
       </div>
 
-      <!-- Newsletter CTA (WCAG 3.1) -->
-      <div class="newsletter-cta">
-        <h3>Receba dicas práticas no seu e-mail</h3>
-        <p>Uma vez por semana, direto ao ponto e sem spam. Dicas e alertas para o seu novo lar.</p>
-        <form class="newsletter-form" id="newsletter-form" novalidate>
-          <input type="email" id="newsletter-email" name="email" placeholder="Seu melhor e-mail" autocomplete="email" required aria-label="Endereço de e-mail">
-          <button class="btn" type="submit">Quero receber</button>
-        </form>
-        <div id="newsletter-feedback" class="newsletter-feedback" role="status" aria-live="polite"></div>
-      </div>
     </div>
   </section>
 
@@ -422,44 +413,6 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- ========== SEÇÃO: FERRAMENTAS ========== -->
-  <section class="view" data-v="ferramentas" id="ferramentas" aria-labelledby="h-ferramentas" hidden>
-    <div class="container">
-      <div class="view-intro">
-        <h1 id="h-ferramentas">Ferramentas</h1>
-        <p>Calculadoras e utilitários que estamos desenvolvendo para facilitar cada detalhe da sua nova rotina.</p>
-      </div>
-
-      <div class="tools-grid">
-        <div class="card tool-card">
-          <span class="badge-soon">Em breve</span>
-          <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></div>
-          <h3>Planilha de Custos</h3>
-          <p>Calculadora com despesas de mudança e custos iniciais organizados.</p>
-        </div>
-
-        <div class="card tool-card">
-          <span class="badge-soon">Em breve</span>
-          <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
-          <h3>Simulador de Espaço</h3>
-          <p>Arraste móveis em escala e veja se a circulação fica confortável.</p>
-        </div>
-
-        <div class="card tool-card">
-          <span class="badge-soon">Em breve</span>
-          <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div>
-          <h3>Caderno de Medidas</h3>
-          <p>Guarde as dimensões de cada parede e janela no seu celular.</p>
-        </div>
-
-        <div class="card tool-card">
-          <span class="badge-soon">Em breve</span>
-          <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
-          <h3>Lista de Enxoval</h3>
-          <p>Guia do que comprar primeiro, separado por faixas de preço realistas.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <ToolsSection />
 
 </Layout>

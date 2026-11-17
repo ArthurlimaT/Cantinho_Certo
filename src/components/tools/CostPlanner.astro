@@ -1,0 +1,153 @@
+---
+---
+
+<section class="cost-planner-panel" id="cost-planner-panel" data-tool-panel="cost-planner" aria-labelledby="h-cost-planner" hidden>
+  <div class="cost-planner-heading">
+    <button class="tool-back-button" type="button" data-tools-back="cost-planner">
+      <span aria-hidden="true">←</span> Voltar para ferramentas
+    </button>
+    <p class="tools-eyebrow">Controle financeiro</p>
+    <h2 id="h-cost-planner" tabindex="-1">Planilha de Custos</h2>
+    <p>Organize todas as despesas da mudança em categorias. Os valores são salvos automaticamente no seu navegador.</p>
+  </div>
+
+  <div class="cost-planner-layout">
+    <div class="cost-summary-card">
+      <div class="cost-summary-heading">
+        <div>
+          <p class="tools-eyebrow">Resumo</p>
+          <h3>Total geral</h3>
+        </div>
+        <div class="cost-summary-values">
+          <strong class="cost-grand-total" data-cost-grand-total>R$ 0,00</strong>
+          <span class="cost-item-count" data-cost-item-count>0 despesas</span>
+        </div>
+      </div>
+      <button class="cost-clear-btn" type="button" data-cost-clear-all>Limpar tudo</button>
+    </div>
+
+    <div class="cost-categories">
+      <!-- Aluguel e caução -->
+      <div class="cost-category-section" data-cost-category="aluguel">
+        <button class="cost-category-toggle" type="button" data-cost-toggle aria-expanded="true">
+          <span class="cost-category-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </span>
+          <span class="cost-category-label">Aluguel e caução</span>
+          <span class="cost-category-total" data-cost-cat-total>R$ 0,00</span>
+          <span class="cost-toggle-icon" aria-hidden="true">▾</span>
+        </button>
+        <div class="cost-category-body" data-cost-body>
+          <ul class="cost-items-list" data-cost-items></ul>
+          <form class="cost-add-form" data-cost-add-form="aluguel">
+            <input type="text" data-cost-desc placeholder="Descrição" aria-label="Descrição da despesa" maxlength="120" required>
+            <input type="text" data-cost-value placeholder="Valor (R$)" aria-label="Valor em reais" inputmode="decimal" maxlength="24" required>
+            <button class="btn btn-outline cost-add-btn" type="submit">Adicionar</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Carreto e frete -->
+      <div class="cost-category-section" data-cost-category="transporte">
+        <button class="cost-category-toggle" type="button" data-cost-toggle aria-expanded="true">
+          <span class="cost-category-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </span>
+          <span class="cost-category-label">Carreto e frete</span>
+          <span class="cost-category-total" data-cost-cat-total>R$ 0,00</span>
+          <span class="cost-toggle-icon" aria-hidden="true">▾</span>
+        </button>
+        <div class="cost-category-body" data-cost-body>
+          <ul class="cost-items-list" data-cost-items></ul>
+          <form class="cost-add-form" data-cost-add-form="transporte">
+            <input type="text" data-cost-desc placeholder="Descrição" aria-label="Descrição da despesa" maxlength="120" required>
+            <input type="text" data-cost-value placeholder="Valor (R$)" aria-label="Valor em reais" inputmode="decimal" maxlength="24" required>
+            <button class="btn btn-outline cost-add-btn" type="submit">Adicionar</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Mobília essencial -->
+      <div class="cost-category-section" data-cost-category="mobilia">
+        <button class="cost-category-toggle" type="button" data-cost-toggle aria-expanded="true">
+          <span class="cost-category-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </span>
+          <span class="cost-category-label">Mobília essencial</span>
+          <span class="cost-category-total" data-cost-cat-total>R$ 0,00</span>
+          <span class="cost-toggle-icon" aria-hidden="true">▾</span>
+        </button>
+        <div class="cost-category-body" data-cost-body>
+          <ul class="cost-items-list" data-cost-items></ul>
+          <form class="cost-add-form" data-cost-add-form="mobilia">
+            <input type="text" data-cost-desc placeholder="Descrição" aria-label="Descrição da despesa" maxlength="120" required>
+            <input type="text" data-cost-value placeholder="Valor (R$)" aria-label="Valor em reais" inputmode="decimal" maxlength="24" required>
+            <button class="btn btn-outline cost-add-btn" type="submit">Adicionar</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Contas iniciais -->
+      <div class="cost-category-section" data-cost-category="utilidades">
+        <button class="cost-category-toggle" type="button" data-cost-toggle aria-expanded="true">
+          <span class="cost-category-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </span>
+          <span class="cost-category-label">Contas iniciais</span>
+          <span class="cost-category-total" data-cost-cat-total>R$ 0,00</span>
+          <span class="cost-toggle-icon" aria-hidden="true">▾</span>
+        </button>
+        <div class="cost-category-body" data-cost-body>
+          <ul class="cost-items-list" data-cost-items></ul>
+          <form class="cost-add-form" data-cost-add-form="utilidades">
+            <input type="text" data-cost-desc placeholder="Descrição" aria-label="Descrição da despesa" maxlength="120" required>
+            <input type="text" data-cost-value placeholder="Valor (R$)" aria-label="Valor em reais" inputmode="decimal" maxlength="24" required>
+            <button class="btn btn-outline cost-add-btn" type="submit">Adicionar</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Reformas leves -->
+      <div class="cost-category-section" data-cost-category="reformas">
+        <button class="cost-category-toggle" type="button" data-cost-toggle aria-expanded="true">
+          <span class="cost-category-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </span>
+          <span class="cost-category-label">Reformas leves</span>
+          <span class="cost-category-total" data-cost-cat-total>R$ 0,00</span>
+          <span class="cost-toggle-icon" aria-hidden="true">▾</span>
+        </button>
+        <div class="cost-category-body" data-cost-body>
+          <ul class="cost-items-list" data-cost-items></ul>
+          <form class="cost-add-form" data-cost-add-form="reformas">
+            <input type="text" data-cost-desc placeholder="Descrição" aria-label="Descrição da despesa" maxlength="120" required>
+            <input type="text" data-cost-value placeholder="Valor (R$)" aria-label="Valor em reais" inputmode="decimal" maxlength="24" required>
+            <button class="btn btn-outline cost-add-btn" type="submit">Adicionar</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Imprevistos -->
+      <div class="cost-category-section" data-cost-category="imprevistos">
+        <button class="cost-category-toggle" type="button" data-cost-toggle aria-expanded="true">
+          <span class="cost-category-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </span>
+          <span class="cost-category-label">Imprevistos</span>
+          <span class="cost-category-total" data-cost-cat-total>R$ 0,00</span>
+          <span class="cost-toggle-icon" aria-hidden="true">▾</span>
+        </button>
+        <div class="cost-category-body" data-cost-body>
+          <ul class="cost-items-list" data-cost-items></ul>
+          <form class="cost-add-form" data-cost-add-form="imprevistos">
+            <input type="text" data-cost-desc placeholder="Descrição" aria-label="Descrição da despesa" maxlength="120" required>
+            <input type="text" data-cost-value placeholder="Valor (R$)" aria-label="Valor em reais" inputmode="decimal" maxlength="24" required>
+            <button class="btn btn-outline cost-add-btn" type="submit">Adicionar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="cost-announcement" id="cost-announcement" role="status" aria-live="polite" aria-atomic="true"></p>
+</section>

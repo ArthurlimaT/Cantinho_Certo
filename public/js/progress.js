@@ -9,7 +9,7 @@
   'use strict';
 
   function countChecked() {
-    var allInputs = document.querySelectorAll('.checklist-input');
+    var allInputs = document.querySelectorAll('.checklist .checklist-input');
     var total = allInputs.length;
     var checked = 0;
     allInputs.forEach(function(input) {

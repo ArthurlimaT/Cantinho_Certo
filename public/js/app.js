@@ -23,11 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
     window.CantinhoFloorPlan.init();
   }
 
-  if (window.CantinhoNewsletter && typeof window.CantinhoNewsletter.init === 'function') {
-    window.CantinhoNewsletter.init();
-  }
-
   if (window.CantinhoNavigation && typeof window.CantinhoNavigation.init === 'function') {
     window.CantinhoNavigation.init();
+  }
+
+  if (window.CantinhoTools && typeof window.CantinhoTools.init === 'function') {
+    window.CantinhoTools.init();
   }
 });

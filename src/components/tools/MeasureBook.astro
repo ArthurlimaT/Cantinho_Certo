@@ -1,0 +1,82 @@
+---
+---
+
+<section class="measure-book-panel" id="measure-book-panel" data-tool-panel="measure-book" aria-labelledby="h-measure-book" hidden>
+  <div class="measure-book-heading">
+    <button class="tool-back-button" type="button" data-tools-back="measure-book">
+      <span aria-hidden="true">←</span> Voltar para ferramentas
+    </button>
+    <p class="tools-eyebrow">Registro de dimensões</p>
+    <h2 id="h-measure-book" tabindex="-1">Caderno de Medidas</h2>
+    <p>Registre as dimensões de cada cômodo, portas e janelas. Todas as medidas ficam salvas no seu navegador.</p>
+  </div>
+
+  <div class="measure-book-layout">
+    <div class="measure-form-card">
+      <div class="space-card-heading">
+        <span class="space-step-number" aria-hidden="true">01</span>
+        <div>
+          <h3>Novo cômodo</h3>
+          <p>Informe as medidas internas, em metros.</p>
+        </div>
+      </div>
+
+      <form id="measure-add-form" class="measure-form">
+        <div class="measure-name-field">
+          <label for="measure-room-name">Nome do cômodo</label>
+          <input id="measure-room-name" type="text" data-measure-name placeholder="Ex.: Sala, Quarto, Cozinha" maxlength="60" required>
+        </div>
+
+        <div class="measure-dims-form">
+          <div class="space-field">
+            <label for="measure-room-width">Largura</label>
+            <div class="space-input-unit">
+              <input id="measure-room-width" type="number" data-measure-width min="0.01" max="30" step="0.01" inputmode="decimal" placeholder="0,00" required>
+              <span aria-hidden="true">m</span>
+            </div>
+          </div>
+          <div class="space-field">
+            <label for="measure-room-length">Comprimento</label>
+            <div class="space-input-unit">
+              <input id="measure-room-length" type="number" data-measure-length min="0.01" max="30" step="0.01" inputmode="decimal" placeholder="0,00" required>
+              <span aria-hidden="true">m</span>
+            </div>
+          </div>
+          <div class="space-field">
+            <label for="measure-room-height">Pé-direito <small>(opcional)</small></label>
+            <div class="space-input-unit">
+              <input id="measure-room-height" type="number" data-measure-height min="0.01" max="10" step="0.01" inputmode="decimal" placeholder="0,00">
+              <span aria-hidden="true">m</span>
+            </div>
+          </div>
+        </div>
+
+        <fieldset class="measure-openings-fieldset">
+          <legend>Portas e janelas <small>(opcional)</small></legend>
+          <div data-openings-container></div>
+          <button type="button" class="btn btn-outline cost-add-btn" data-add-opening>+ Adicionar abertura</button>
+        </fieldset>
+
+        <div class="measure-notes-field">
+          <label for="measure-room-notes">Observações <small>(opcional)</small></label>
+          <textarea id="measure-room-notes" data-measure-notes rows="2" maxlength="500" placeholder="Ex.: Tomada atrás da porta, piso irregular..."></textarea>
+        </div>
+
+        <button class="btn measure-submit-btn" type="submit">Registrar cômodo</button>
+      </form>
+    </div>
+
+    <div class="measure-list-card">
+      <div class="measure-list-heading">
+        <div>
+          <p class="tools-eyebrow">Seus registros</p>
+          <h3>Cômodos medidos</h3>
+        </div>
+        <span class="measure-room-count" data-measure-room-count>0 cômodos</span>
+      </div>
+      <div data-measure-rooms class="measure-rooms-container"></div>
+    </div>
+  </div>
+
+  <p class="measure-announcement" id="measure-announcement" role="status" aria-live="polite" aria-atomic="true"></p>
+</section>

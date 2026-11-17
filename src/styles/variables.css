@@ -1,7 +1,7 @@
 /* ===== CSS Custom Properties & Paleta Cantinho Certo ===== */
 :root {
   /* Cores Principais (Modo Claro) */
-  --bg: #F8F6F0;                /* Linho suave de fundo */
+  --bg: #F5F0E5;                /* Creme suave de fundo */
   --text: #2D2A26;              /* Grafite quente para texto principal (12.8:1) */
   --text2: #645D54;             /* Grafite secundário (5.4:1) */
   --card: #EFECE6;              /* Marfim para superfícies e cards */

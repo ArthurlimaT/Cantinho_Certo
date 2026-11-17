@@ -1,0 +1,67 @@
+---
+import SpacePlanner from './SpacePlanner.astro';
+import CostPlanner from './CostPlanner.astro';
+import MeasureBook from './MeasureBook.astro';
+import Trousseau from './Trousseau.astro';
+---
+
+<section class="view tools-section" data-v="ferramentas" id="ferramentas" aria-labelledby="h-ferramentas" hidden>
+  <div class="container">
+    <div class="tools-catalog" data-tools-catalog>
+      <div class="view-intro">
+        <p class="tools-eyebrow">Recursos para cada etapa</p>
+        <h1 id="h-ferramentas">Ferramentas</h1>
+        <p>Ideias práticas para planejar o novo lar com mais clareza, no seu ritmo.</p>
+      </div>
+
+      <div class="tools-grid">
+        <article class="card tool-card tool-card--active">
+          <span class="tool-status">Disponível</span>
+          <div class="icon-circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 3v18"/></svg>
+          </div>
+          <h2>Simulador de Espaço</h2>
+          <p>Organize alguns móveis em escala e confira encaixes e passagens antes da mudança.</p>
+          <button class="btn tool-open-button" type="button" data-open-tool="space-planner" aria-controls="space-planner-panel" aria-expanded="false">
+            Abrir simulador
+          </button>
+        </article>
+
+        <article class="card tool-card tool-card--active">
+          <span class="tool-status">Disponível</span>
+          <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></div>
+          <h2>Planilha de Custos</h2>
+          <p>Organize despesas da mudança e custos iniciais em um só lugar.</p>
+          <button class="btn tool-open-button" type="button" data-open-tool="cost-planner" aria-controls="cost-planner-panel" aria-expanded="false">
+            Abrir planilha
+          </button>
+        </article>
+
+        <article class="card tool-card tool-card--active">
+          <span class="tool-status">Disponível</span>
+          <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div>
+          <h2>Caderno de Medidas</h2>
+          <p>Guarde dimensões de cômodos, portas e janelas no seu dispositivo.</p>
+          <button class="btn tool-open-button" type="button" data-open-tool="measure-book" aria-controls="measure-book-panel" aria-expanded="false">
+            Abrir caderno
+          </button>
+        </article>
+
+        <article class="card tool-card tool-card--active">
+          <span class="tool-status">Disponível</span>
+          <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+          <h2>Lista de Enxoval</h2>
+          <p>Descubra o que priorizar, com sugestões para diferentes orçamentos.</p>
+          <button class="btn tool-open-button" type="button" data-open-tool="trousseau" aria-controls="trousseau-panel" aria-expanded="false">
+            Abrir lista
+          </button>
+        </article>
+      </div>
+    </div>
+
+    <SpacePlanner />
+    <CostPlanner />
+    <MeasureBook />
+    <Trousseau />
+  </div>
+</section>

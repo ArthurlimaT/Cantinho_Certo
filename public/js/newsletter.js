@@ -58,36 +58,30 @@
       submitBtn.textContent = 'Enviando...';
       setFeedback('Inscrevendo seu e-mail...', 'loading');
 
-      var endpoint = window.CANTINHO_NEWSLETTER_ENDPOINT || null;
-
-      if (endpoint) {
-        // Envio real para API configurada
-        fetch(endpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify({ email: email, timestamp: new Date().toISOString() })
-        })
-        .then(function(response) {
-          if (!response.ok) throw new Error('Falha no serviço (' + response.status + ')');
-          return response.json().catch(function() { return {}; });
-        })
-        .then(function() {
-          handleSuccess();
-        })
-        .catch(function(err) {
-          handleError('Não foi possível concluir a inscrição agora. Tente novamente mais tarde.');
-        });
-      } else {
-        // Simulação assíncrona robusta (caso nenhum endpoint esteja configurado ainda)
-        window.setTimeout(function() {
-          // Salva confirmação no storage para registrar que o usuário já assinou
-          window.CantinhoStorage.setChecklistItem('newsletter-subscribed', true);
-          handleSuccess();
-        }, 800);
+      var endpoint = window.CANTINHO_NEWSLETTER_ENDPOINT;
+      if (!endpoint) {
+        handleError('Inscrições por e-mail ainda não estão disponíveis.');
+        return;
       }
+
+      fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ email: email, timestamp: new Date().toISOString() })
+      })
+      .then(function(response) {
+        if (!response.ok) throw new Error('Falha no serviço (' + response.status + ')');
+        return response.json().catch(function() { return {}; });
+      })
+      .then(function() {
+        handleSuccess();
+      })
+      .catch(function() {
+        handleError('Não foi possível concluir a inscrição agora. Tente novamente mais tarde.');
+      });
 
       function handleSuccess() {
         isSubmitting = false;

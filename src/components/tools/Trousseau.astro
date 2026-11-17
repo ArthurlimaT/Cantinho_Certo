@@ -1,0 +1,84 @@
+---
+---
+
+<section class="trousseau-panel" id="trousseau-panel" data-tool-panel="trousseau" aria-labelledby="h-trousseau" hidden>
+  <div class="trousseau-heading">
+    <button class="tool-back-button" type="button" data-tools-back="trousseau">
+      <span aria-hidden="true">←</span> Voltar para ferramentas
+    </button>
+    <p class="tools-eyebrow">Lista de compras</p>
+    <h2 id="h-trousseau" tabindex="-1">Lista de Enxoval</h2>
+    <p>Monte sua lista do que comprar por prioridade. Marque os itens comprados e acompanhe o total.</p>
+  </div>
+
+  <div class="trousseau-layout">
+    <div class="trousseau-form-card">
+      <div class="space-card-heading">
+        <span class="space-step-number" aria-hidden="true">01</span>
+        <div>
+          <h3>Adicionar item</h3>
+          <p>Informe o que precisa comprar.</p>
+        </div>
+      </div>
+
+      <form id="trousseau-add-form" class="trousseau-form">
+        <div class="trousseau-form-fields">
+          <div class="trousseau-name-field">
+            <label for="trousseau-item-name">O que comprar</label>
+            <input id="trousseau-item-name" type="text" data-trousseau-name placeholder="Ex.: Colchão, panela, toalhas" maxlength="120" required>
+          </div>
+
+          <div class="trousseau-row-fields">
+            <div class="space-field">
+              <label for="trousseau-item-priority">Prioridade</label>
+              <select id="trousseau-item-priority" data-trousseau-priority>
+                <option value="essential">Essencial</option>
+                <option value="soon">Logo depois</option>
+                <option value="later">Pode esperar</option>
+              </select>
+            </div>
+
+            <div class="space-field">
+              <label for="trousseau-item-price">Preço estimado</label>
+              <div class="space-input-unit">
+                <input id="trousseau-item-price" type="text" data-trousseau-price placeholder="0,00" inputmode="decimal" maxlength="24" aria-label="Preço estimado em reais">
+                <span aria-hidden="true">R$</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn trousseau-submit-btn" type="submit">Adicionar à lista</button>
+      </form>
+    </div>
+
+    <div class="trousseau-list-card">
+      <div class="trousseau-list-heading">
+        <div>
+          <p class="tools-eyebrow">Sua lista</p>
+          <h3>Itens do enxoval</h3>
+        </div>
+        <span class="trousseau-counter" data-trousseau-item-count>0 de 0 itens</span>
+      </div>
+
+      <div class="trousseau-summary-bar">
+        <div class="trousseau-summary-item">
+          <span>Total estimado</span>
+          <strong data-trousseau-total>R$ 0,00</strong>
+        </div>
+        <div class="trousseau-summary-item">
+          <span>Já comprado</span>
+          <strong data-trousseau-bought>R$ 0,00</strong>
+        </div>
+        <div class="trousseau-summary-item">
+          <span>Falta comprar</span>
+          <strong data-trousseau-remaining>R$ 0,00</strong>
+        </div>
+      </div>
+
+      <div data-trousseau-list class="trousseau-list-container"></div>
+    </div>
+  </div>
+
+  <p class="trousseau-announcement" id="trousseau-announcement" role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
