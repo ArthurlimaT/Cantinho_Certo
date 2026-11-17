@@ -83,6 +83,15 @@ a:hover { opacity: 0.85; }
   padding: 0 24px;
 }
 
+.privacy-content {
+  max-width: 760px;
+}
+
+.privacy-content > h2 {
+  margin-top: 32px;
+  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+}
+
 section, .view-section {
   padding: var(--section-py) 0;
 }

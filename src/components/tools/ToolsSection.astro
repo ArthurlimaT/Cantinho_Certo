@@ -57,6 +57,26 @@ import Trousseau from './Trousseau.astro';
           </button>
         </article>
       </div>
+
+      <aside class="card data-backup-card" aria-labelledby="data-backup-title">
+        <p class="tools-eyebrow">Seus dados, sob seu controle</p>
+        <h2 id="data-backup-title">Faça uma cópia das suas informações</h2>
+        <p>Checklists, progresso e dados das ferramentas ficam neste navegador. Baixe um arquivo para guardar ou transferir seus dados para outro dispositivo.</p>
+        <div class="btn-group">
+          <button class="btn" type="button" data-backup-export>Baixar backup</button>
+          <button class="btn btn-outline" type="button" data-backup-import>Restaurar backup</button>
+          <input type="file" accept=".json,application/json" data-backup-file hidden>
+        </div>
+        <p class="data-backup-status" data-backup-status role="status" aria-live="polite"></p>
+        <div class="data-backup-confirmation" data-backup-restore-panel hidden>
+          <p>Restaurar o arquivo substituirá os dados atuais do Cantinho Certo neste navegador, incluindo checklists, ferramentas e tema.</p>
+          <div class="btn-group">
+            <button class="btn" type="button" data-backup-confirm-restore>Restaurar e atualizar</button>
+            <button class="btn btn-outline" type="button" data-backup-cancel-restore>Cancelar</button>
+          </div>
+        </div>
+        <p class="data-backup-privacy-link"><a href="/privacidade.html">Leia como os dados são usados e armazenados</a></p>
+      </aside>
     </div>
 
     <SpacePlanner />

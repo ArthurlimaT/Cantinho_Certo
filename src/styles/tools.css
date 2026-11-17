@@ -67,6 +67,43 @@
   font-size: 0.92rem;
 }
 
+.data-backup-card {
+  margin-top: 32px;
+}
+
+.data-backup-card h2 {
+  font-size: 1.35rem;
+}
+
+.data-backup-card .btn-group {
+  margin-top: 12px;
+}
+
+.data-backup-card [hidden] {
+  display: none;
+}
+
+.data-backup-status {
+  min-height: 1.5em;
+  margin: 14px 0 0;
+  font-size: 0.9rem;
+}
+
+.data-backup-status[data-state="error"] {
+  color: var(--error-text);
+}
+
+.data-backup-confirmation {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.data-backup-privacy-link {
+  margin: 16px 0 0;
+  font-size: 0.9rem;
+}
+
 .space-planner-panel {
   padding: 0;
 }

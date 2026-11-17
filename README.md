@@ -26,6 +26,11 @@ O Astro gerará a pasta `dist/` com HTML puro, CSS minificado e scripts otimizad
 npm run preview
 ```
 
+### 4. Executar os testes
+```bash
+npm test
+```
+
 ---
 
 ## Estrutura do Projeto (Astro)
@@ -39,11 +44,13 @@ cantinhoCerto/
 │   ├── hero-botanical.svg   # Ilustração decorativa do início
 │   ├── og-image.png         # Prévia para compartilhamento
 │   └── js/                  # Módulos JavaScript do site e ferramentas isoladas
+├── tests/                   # Testes de validação e restauração de backup
 ├── src/
 │   ├── layouts/
 │   │   └── Layout.astro     # Layout base com cabeçalho, navegação e rodapé
 │   ├── pages/
-│   │   └── index.astro      # Página principal
+│   │   ├── index.astro      # Página principal
+│   │   └── privacidade.astro # Informações sobre dados e privacidade
 │   ├── components/
 │   │   └── tools/           # Catálogo e interfaces das ferramentas
 │   └── styles/              # Design System em CSS
@@ -65,11 +72,11 @@ cantinhoCerto/
 * **Planilha de Custos:** Despesas da mudança organizadas em 6 categorias (aluguel, frete, mobília, contas, reformas, imprevistos) com soma automática e persistência local.
 * **Caderno de Medidas:** Registro de dimensões de cômodos, portas e janelas com cálculo de área e observações.
 * **Lista de Enxoval:** Lista de compras categorizada por prioridade (essencial, logo depois, pode esperar) com preços estimados e marcação de itens comprados.
-* **Dados locais:** As quatro ferramentas mantêm seus registros separados no armazenamento do navegador, sem sincronização entre dispositivos.
+* **Dados locais:** Checklists, progresso, tema e registros das quatro ferramentas ficam no armazenamento do navegador, sem sincronização entre dispositivos. A seção Ferramentas permite exportar e restaurar um backup JSON.
 * **Planta Baixa Interativa SVG:** Seleção de cômodos (Sala, Quarto, Cozinha, Banheiro) com dicas de vistoria e navegação completa por teclado.
 * **Checklists Nativos & Acessíveis:** `<input type="checkbox">` com persistência segura no `localStorage` e suporte a mouse, toque e teclado.
 * **Modo Claro / Escuro:** Alternância manual persistente com sincronização automática do `prefers-color-scheme`.
-* **Newsletter:** Temporariamente desativada; será integrada a um serviço real de envio futuramente.
+* **Privacidade:** A página dedicada explica o armazenamento local e os serviços externos carregados pelo site.
 * **Acessibilidade WCAG 2.2 AA:** Anel de foco terracota, skip link, anúncios via `aria-live` e hierarquia de títulos semântica.
 * **Guia de visita imprimível:** Checklist com composição otimizada para impressão em folha A4.
 * **Prévia de compartilhamento:** Metadados Open Graph e Twitter com imagem social em alta resolução.

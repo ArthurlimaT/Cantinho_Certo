@@ -94,6 +94,8 @@
   }
 
   function initNavigation() {
+    if (!document.querySelector('.view')) return;
+
     // Escuta mudanças de hash e botões de avançar/voltar do navegador
     window.addEventListener('hashchange', function() {
       showView(getHash(), { focus: true, scroll: true });
